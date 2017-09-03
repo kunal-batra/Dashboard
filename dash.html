@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Dashboard</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="dash.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row dashboard">
+			<div class="col-md-3 col-sm-4">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<p>My Account</p>
+					</div>
+					<a href="#details" onclick="$('#password, #order, #transaction').hide(); $('#details').show();">
+						<div class="panel-body" id="panel-list">
+							<p>View/Edit Profile</p>
+						</div>
+					</a>
+					<a href="#order" onclick="$('#password, #details,#transaction').hide(); $('#order').show();">
+						<div class="panel-body" id="panel-list">
+							<p>Recent Order</p>
+						</div>
+					</a>
+					<a href="#transaction" onclick="$('#password, #details, #order').hide(); $('#transaction').show();">
+						<div class="panel-body" id="panel-list">
+							<p>Order History</p>
+						</div>
+					</a>
+					<a href="#password" onclick="$('#details, #order, #transaction').hide(); $('#password').show();">
+						<div class="panel-body" id="panel-list">
+							<p>Change Password</p>
+						</div>
+					</a>
+					<a href="#" id="logout">
+						<div class="panel-body">
+							<p>Logout</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-8" id="details">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p>Details</p>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-4" id="display-pic">
+								<a href="#"><img src="photo.jpg" class="img-responsive profile-pic"></a>
+								<p><a href="#" id="p-edit">edit</a></p>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group dash-form">
+									<input type="text" class="form-control" id="name" value="Kunal Batra">
+									<br>
+									<input type="email" class="form-control" id="name" value="kunalbtr@gmail.com">
+									<br>
+									<input type="tel" class="form-control" id="name" value="9876543210">
+									<br>
+									<br> &nbsp;
+									<button type="submit" id="update" class="btn btn-primary">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-8 col-sm-8" id="order" style="display: none;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p>Your most recent order</p>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<p>Wash basin (standard style) <a href="#order-detail" style="text-decoration: underline; float: right;" onclick="$('#order-detail').toggle();">details</a></p>
+							</div>
+							<div class="col-md-12" id="order-detail" style="display: none;">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-sm-6">
+											<p><strong>Booking ID: </strong>2664</p>
+											<p><strong>Date and Time of Booking: </strong>12/08/2017, 11:00 am</p>
+											<p><strong>Date of service: </strong>15/08/2017</p>
+										</div>
+										<div class="col-sm-6">
+											<p><strong>Quantity: </strong>1</p>
+											<p><strong>Total amount paid: </strong>1234</p>
+											<p><strong>Order status: </strong>completed</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-8 col-sm-8" id="transaction" style="display: none;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p>Your order and transaction history</p>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+
+
+								<p>Washing machine connection (standard fittings)<a href="#order-detail1" style="text-decoration: underline; float: right;" onclick="$('#order-detail1').toggle();">details</a></p>
+
+								<div class="col-md-12" id="order-detail1" style="display: none;">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-6">
+												<p><strong>Booking ID: </strong>2664</p>
+												<p><strong>Date and Time of Booking: </strong>12/08/2017, 11:00 am</p>
+												<p><strong>Date of service: </strong>15/08/2017</p>
+											</div>
+											<div class="col-sm-6">
+												<p><strong>Quantity: </strong>1</p>
+												<p><strong>Total amount paid: </strong>1234</p>
+												<p><strong>Order status: </strong>completed</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<p>Geyser installation (5 ltrs)<a href="#order-detail2" style="text-decoration: underline; float: right;" onclick="$('#order-detail2').toggle();">details</a></p>
+
+								<div class="col-md-12" id="order-detail2" style="display: none;">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-6">
+												<p><strong>Booking ID: </strong>2664</p>
+												<p><strong>Date  and Time of Booking: </strong>12/08/2017, 11:00 am</p>
+												<p><strong>Date of service: </strong>15/08/2017</p>
+											</div>
+											<div class="col-sm-6">
+												<p><strong>Quantity: </strong>1</p>
+												<p><strong>Total amount paid: </strong>1234</p>
+												<p><strong>Order status: </strong>completed</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<p> Western Toilet (Close Coupled) - Installation<a href="#order-detail3" style="text-decoration: underline; float: right;" onclick="$('#order-detail3').toggle();">details</a></p>
+
+								<div class="col-md-12" id="order-detail3" style="display: none;">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-6">
+												<p><strong>Booking ID: </strong>2664</p>
+												<p><strong>Date  and Time of Booking: </strong>12/08/2017, 11:00 am</p>
+												<p><strong>Date of service: </strong>15/08/2017</p>
+											</div>
+											<div class="col-sm-6">
+												<p><strong>Quantity: </strong>1</p>
+												<p><strong>Total amount paid: </strong>1234</p>
+												<p><strong>Order status: </strong>completed</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-8 col-sm-8" id="password" style="display: none;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p>Change password</p>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-1">
+								<div class="form-group dash-form">
+									<input type="password" class="form-control" id="name" placeholder="type old password">
+									<br>
+									<input type="password" class="form-control" id="name" placeholder="type new password">
+									<br>
+									<input type="password" class="form-control" id="name" placeholder="confirm new password">
+									<br>
+									<br> &nbsp;
+									<button type="submit" id="update" class="btn btn-primary">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
